@@ -15,7 +15,7 @@ const ImageLinks = require("./utils/image_links.json");
         data.push({
           src: element.Source,
           destination: element.Destination,
-          status: response.status,
+          status: response?.status,
         });
       }
       console.log(
@@ -25,10 +25,10 @@ const ImageLinks = require("./utils/image_links.json");
       data.push(JSON.stringify({
         src: element.Source,
         destination: element.Destination,
-        status: error.response.status,
+        status: error.response?.status,
       }));
       console.log(
-        `finalizando teste url: ${element.Source}, status: ${error.response.status}`
+        `finalizando teste url: ${element.Source}, status: ${error.response?.status}`
       );
     }
   }
