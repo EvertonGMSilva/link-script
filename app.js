@@ -38,11 +38,11 @@ const ImageLinks = require("./utils/image_links.json");
     await getURL(element);
     
     if(data.length === 50){
-    fs.writeFile(`arquivo${new Date().toISOString()}.json`, data.toString(), (err) => {
+      fs.write(__dirname + `arquivo${new Date().toISOString()}.json`, data.toString(), (err) => {
       if (err) throw err;
       console.log("O arquivo foi criado!");
     });
-    fs.writeFile(`urlsconsultadas.txt`, count.toString(), (err) => {
+    fs.writeFile(__dirname + `urlsconsultadas.txt`, count.toString(), (err) => {
       if (err) throw err;
       console.log(`Foram consultadas ${count} urls`);
     });
